@@ -12,14 +12,14 @@ namespace Bank_Account
         {
             Client Suzy = new Client("Suzy Carmichael ", 191914, 250000000.00d);
 
-            Checking checking = new Checking(50000000, "Checkings", 191915);
+            Checking checking = new Checking(500000, "Checkings", 191915);
 
-            Saving saving = new Saving(1000000, "Savings", 191916);
+            Saving saving = new Saving(10000, "Savings", 191916);
 
 
             Console.WriteLine("Welcome to White National Bank! How can we assist you?");
             string entryCommand;
-            //string uCaseEntryCommand;
+           
 
             do
             {
@@ -31,7 +31,7 @@ namespace Bank_Account
                     Console.WriteLine(Suzy.LogIn());
                 }
                 //2. View account balance... choose a or b....
-                //careful of which "ba;ance" you're using...
+                //careful of which "balance" you're using...
                 else if (entryCommand == "2")
                 {
                     Console.WriteLine("A. View Balance in Checking...\nB. View Balance in Saving.\nEnter A or B.");
@@ -48,43 +48,56 @@ namespace Bank_Account
 
                 }
 
-                //3. Deposit funds
+                //3. Deposit funds... user input??
                 else if (entryCommand == "3")
                 {
-                    Console.WriteLine("A. Depost funds into checking account....\n B. Deposit funds into savings account.... Enter A or B.");
-                    string depositAccount = Console.ReadLine().ToLower();
+                    Console.WriteLine("A. Depost funds into checking account....\nB. Deposit funds into savings account.... Enter A or B.");
+                    string depositAccount = Console.ReadLine().ToUpper();
+                  //  double depositAmount = double.Parse(Console.ReadLine());
+                   // double checkingBalance;
 
                     if (depositAccount == "A")
                     {
+                        Console.WriteLine("Enter the amount you would like to deposit.");
+                        double depositAmount = double.Parse(Console.ReadLine());
                         checking.DepositFunds();
-                        Console.WriteLine("Current balance for your savings account is " + checking.CheckingBalance + "dollars.");
+                        checking.CurrentBalance();
+                        Console.WriteLine("Current balance for your checking account is " + checking.CheckingBalance + " dollars.");                      
                     }
                     else if (depositAccount == "B")
                     {
-                        saving.DepositFunds();
-                        Console.WriteLine("Current balance for your checking account is " + saving.SavingBalance + "dollars.");
+                        Console.WriteLine("Enter the amount you would like to deposit.");
+                        double depositAmount = double.Parse(Console.ReadLine());
+                        saving.SDepositFunds();
+                        saving.CurrentBalance();
+                        Console.WriteLine("Current balance for your saving account is " + saving.SavingBalance + " dollars.");                      
                     }
                 }
 
                 //4. Withdraw funds
                 else if (entryCommand == "4")
                 {
-                    Console.WriteLine("A. Withdraw funds from checking account....\n B. Withdraw funds from savings account.");
-                    string withdrawAccount = Console.ReadLine().ToLower();
+                    Console.WriteLine("A. Withdraw funds from checking account....\nB. Withdraw funds from savings account.");
+                    string withdrawAccount = Console.ReadLine().ToUpper();
+                    double withdrawAmount = double.Parse(Console.ReadLine());
 
                     if (withdrawAccount == "A")
                     {
+                        Console.WriteLine("Enter the amount you would like to withdraw.");
                         checking.WithdrawFunds();
+                        checking.CurrentBalance();
                         Console.WriteLine("Available balance for your checking account is " + checking.CheckingBalance);
                     }
                     else if (withdrawAccount == "B")
                     {
+                        Console.WriteLine("Enter the amount you would like to withdraw.");
                         saving.WithdrawFunds();
+                        saving.CurrentBalance();
                         Console.WriteLine("Available balance for your savings account is " + saving.SavingBalance);
                     }
                 }
 
-                //Exiting... this part is hard :/
+                
                 //wait no... remember this is still in a huge if-else statement!
                 else
                 {

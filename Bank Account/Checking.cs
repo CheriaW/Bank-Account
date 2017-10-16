@@ -12,29 +12,36 @@ namespace Bank_Account
         //nope-- using fields from the base class Account!
 
         //properties
-        //no
+        public double CheckingBalance
+        {
+            get { return this.checkingBalance; }
+            set { this.checkingBalance = value; }
+        }
 
         //default constructor
         public Checking()
         {
 
         }
-        public Checking(double totalBalance, string accountType, int accountNumber)
+        public Checking(double checkingBalance, string AccountType, int AccountNumber)
         {
-            this.totalBalance = totalBalance;
-            this.accountType = accountType;
-            this.accountNumber = accountNumber;
+            this.checkingBalance = checkingBalance;
+            this.accountType = AccountType;
+            this.accountNumber = AccountNumber;
         }
 
         //methods will override
-        //do I need the code below?
-        //no. run program first then come back and delete
-        public override double DepositFunds()
+        public override void DepositFunds()
         {
             double depositFunds = double.Parse(Console.ReadLine());
-            totalBalance += depositFunds;
-            return depositFunds;
-            // Console.WriteLine("Your current balance in account number " + accountNumber + " is " + TotalBalance + ".");
+            checkingBalance += depositFunds;
+           // return checkingBalance;
+        }
+        public override double WithdrawFunds()
+        {
+            double withdrawFunds = double.Parse(Console.ReadLine());
+            checkingBalance -= withdrawFunds;
+            return checkingBalance;
         }
         public override void Exit()
         {

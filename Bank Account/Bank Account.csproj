@@ -44,7 +44,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account.cs" />
-    <Compile Include="Accountt.cs" />
     <Compile Include="Checking.cs" />
     <Compile Include="Client.cs" />
     <Compile Include="Program.cs" />

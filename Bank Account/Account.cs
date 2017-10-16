@@ -26,20 +26,10 @@ namespace Bank_Account
             get { return this.totalBalance; }
             set { this.totalBalance = value; }
         }
-        public double CheckingBalance
-        {
-            get { return this.checkingBalance; }
-            set { this.checkingBalance = value; }
-        }
-        public double SavingBalance
-        {
-            get { return this.savingBalance; }
-            set { this.savingBalance = value; }
-        }
         public string AccountType
         {
             get { return this.accountType; }
-            // set { this.accountType = value; }
+            set { this.accountType = value; }
         }
         public int AccountNumber
         {
@@ -60,33 +50,32 @@ namespace Bank_Account
         //methods....?
         public Account(string accountType, double totalBalance)
         {
-            this.totalBalance = totalBalance;
-            this.accountType = accountType;
+            this.totalBalance = TotalBalance;
+            this.accountType = AccountType;
         }
 
         public virtual double WithdrawFunds()
         {
             double withdrawFunds = double.Parse(Console.ReadLine());
-            totalBalance -= withdrawFunds;
-            return withdrawFunds;
+            TotalBalance -= withdrawFunds;
+            return TotalBalance;
         }
-        public virtual double DepositFunds()
+        public virtual void DepositFunds()
         {
             double depositFunds = double.Parse(Console.ReadLine());
-            totalBalance += depositFunds;
-            return depositFunds;
+            TotalBalance += depositFunds;
+           // return TotalBalance;
         }
         public virtual string CurrentBalance()
         {
-            return "Account Balance: " + totalBalance;
+            return "Account Balance: " + TotalBalance;
         }
 
         public virtual void Exit()
         {
 
         }
-        //figure out how to let the user "exit
-        //WHY CANT I EXIT?! IM TRAPPED!
+        
 
     }
 }
