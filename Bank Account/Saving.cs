@@ -9,21 +9,49 @@ namespace Bank_Account
     class Saving : Account
     {
         //private
-        //methods will override
-       
-        public Saving(double totalBalance, double withdrawFunds, double depositFunds, int accountNumber)
+        // one extra field for the minimum acccount balance and the corresponding property
+        protected int minBalance;
+
+        public int MinBalance 
+            //why cant i do a get set here?
+            //I was trying to use parenthesis smh... check the details!
         {
-            this.totalBalance = totalBalance;
-            this.withdrawFunds = withdrawFunds;
-            this.depositFunds = depositFunds;
-            this.accountNumber = accountNumber;
+            get { return this.minBalance; }
+            set { this.minBalance = value; }
         }
-        public override double CheckCurrentBalance()
+
+
+        //methods will override  
+        public Saving()
         {
 
-            totalBalance += depositFunds;
-            //base.CurrentBalance();
-            Console.WriteLine("Your current balance in account number " + accountNumber + " is " + TotalBalance + ".");
+        }   
+        public Saving(double totalBalance, string accountType, int accountNumber)
+        {
+            this.totalBalance = totalBalance;
+            this.accountType = accountType;
+            this.accountNumber = accountNumber;
+        }
+        //dont forget the withdraw and deposit
+        public override double WithdrawFunds()
+        {
+            if (totalBalance < 5)
+            {
+                Console.WriteLine("You've tried to withdraw too much money. There is a minium \nbalance of $5 that must be kept in your savings account.");
+                return 0.00d;
+            }
+            else
+            {
+                double withdrawFunds = double.Parse(Console.ReadLine());
+                totalBalance -= withdrawFunds;
+                return withdrawFunds;
+            }
+        }
+        //public override double DepositFunds() //why redlines, why?!
+
+    public override void Exit()
+        {
+            throw new NotImplementedException(); //what is this? it auto filled and it works. im not touching it....
         }
     }
 }

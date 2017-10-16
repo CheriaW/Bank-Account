@@ -1,2 +1,6 @@
 C:\Users\WeCanCodeIT\Documents\Visual Studio 2015\Projects\CLASS PROJECTS\Bank Account\Bank Account\bin\Debug\Bank Account.exe.config
 C:\Users\WeCanCodeIT\Documents\Visual Studio 2015\Projects\CLASS PROJECTS\Bank Account\Bank Account\obj\Debug\Bank Account.csprojResolveAssemblyReference.cache
+C:\Users\WeCanCodeIT\Documents\Visual Studio 2015\Projects\CLASS PROJECTS\Bank Account\Bank Account\bin\Debug\Bank Account.exe
+C:\Users\WeCanCodeIT\Documents\Visual Studio 2015\Projects\CLASS PROJECTS\Bank Account\Bank Account\bin\Debug\Bank Account.pdb
+C:\Users\WeCanCodeIT\Documents\Visual Studio 2015\Projects\CLASS PROJECTS\Bank Account\Bank Account\obj\Debug\Bank Account.exe
+C:\Users\WeCanCodeIT\Documents\Visual Studio 2015\Projects\CLASS PROJECTS\Bank Account\Bank Account\obj\Debug\Bank Account.pdb

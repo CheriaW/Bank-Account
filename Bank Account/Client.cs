@@ -9,11 +9,9 @@ namespace Bank_Account
     class Client
     {
         //fields
-        protected string clientName;
+        public string clientName;
         protected int accountNumber;
-        protected string accountType;
         protected double currentAmount;
-       // protected string accountType;
 
 
         
@@ -28,11 +26,6 @@ namespace Bank_Account
             get { return this.accountNumber; }
             //set { this.accountNumber = value; }
         }
-        public string AccountSelection
-        {
-            get { return this.accountType; }
-            //set { this.accountSelection = value; }
-        }
         public double CurrentAmount
         {
             get { return this.currentAmount; }
@@ -44,11 +37,10 @@ namespace Bank_Account
         {
 
         }
-        public Client(string clientName, int accountNumber, string accountType, double currentAmount)
+        public Client(string clientName, int accountNumber, double currentAmount)
         {
             this.clientName = clientName;
             this.accountNumber = accountNumber;
-            this.accountType = accountType;
             this.currentAmount = currentAmount;
         }
 

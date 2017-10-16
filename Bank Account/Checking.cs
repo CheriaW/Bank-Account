@@ -9,27 +9,36 @@ namespace Bank_Account
     class Checking : Account 
     {
         //fields(?)
+        //nope-- using fields from the base class Account!
 
         //properties
+        //no
+
+        //default constructor
         public Checking()
         {
 
         }
-        public Checking(double totalBalance, double withdrawFunds, double depositFunds, int accountNumber)
+        public Checking(double totalBalance, string accountType, int accountNumber)
         {
             this.totalBalance = totalBalance;
-            this.withdrawFunds = withdrawFunds;
-            this.depositFunds = depositFunds;
-            //this.accountNumber = accountNumber;
+            this.accountType = accountType;
+            this.accountNumber = accountNumber;
         }
 
         //methods will override
-        public override double CheckCurrentBalance()
+        //do I need the code below?
+        //no. run program first then come back and delete
+        public override double DepositFunds()
         {
-
+            double depositFunds = double.Parse(Console.ReadLine());
             totalBalance += depositFunds;
-            base.CheckCurrentBalance();
-           // Console.WriteLine("Your current balance in account number " + accountNumber + " is " + TotalBalance + ".");
+            return depositFunds;
+            // Console.WriteLine("Your current balance in account number " + accountNumber + " is " + TotalBalance + ".");
+        }
+        public override void Exit()
+        {
+           // Console.WriteLine("User: " + clientName + "has chosen to exit the program... HAVE A GREAT DAY!");
         }
     }
 }
